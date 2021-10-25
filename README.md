@@ -13,7 +13,7 @@ timm
 
 # train.py
 
-train and valid with
+train and valid model
 
 # utlis.utlity.py
 
@@ -31,7 +31,7 @@ To create bird dataset literally.
 
 to reproduce result, please make sure that below exist:
 1. classes.txt
-- contain 200 classes
+- contain 200 classes, can be found from https://competitions.codalab.org/competitions/35668#participate-get_starting_kit
 2. testing_img_order.txt
 - the testing order, can be found from https://competitions.codalab.org/competitions/35668#participate-get_starting_kit
 
@@ -42,7 +42,7 @@ to reproduce result, please make sure that below exist:
 
 4. model/myBestModel.pth
 - make sure that folder name is 'model', and model name is 'myBestModel.pth'
-- downloadlink:
+- downloadlink: https://drive.google.com/file/d/197iQwrsA48S_6d5Jysrnv7nYhYGaCsLV/view?usp=sharing
 
 5. output/
 - This folder contain the output. please make sure this folder exist.
