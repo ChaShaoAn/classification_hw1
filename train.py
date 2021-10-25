@@ -61,23 +61,6 @@ def getClasses():
 
 
 # %%
-def get_img_name(img_dir, format="jpg"):
-    """
-    獲取資料夾下format格式的檔名
-    :param img_dir: str
-    :param format: str
-    :return: list
-    """
-    file_names = os.listdir(img_dir)
-    # 使用 list(filter(lambda())) 篩選出 jpg 字尾的檔案
-    img_names = list(filter(lambda x: x.endswith(format), file_names))
-
-    if len(img_names) < 1:
-        raise ValueError("{}下找不到{}格式資料".format(img_dir, format))
-    return img_names
-
-
-# %%
 def train(model, criterion, optimizer, dataloader, switch='Eval', epoch=1):
     train_list = []
     model = model.to(device)
@@ -319,10 +302,10 @@ if __name__ == "__main__":
 
     # model = torch.load('model/vit_b_16.pth')
     # model = factory.load_pretrained_vit_b_16()
-    # model = torch.load('model/vit_b_16_75percent.pth')
-    model = factory.load_pretrained_swin_vit_b()
+    model = torch.load('model/swin_best_86-iter11.pth')
+    # model = factory.load_pretrained_swin_vit_b()
 
-    training = True
+    training = False
     warmup = False
     epoch = 15
     iter = 0
@@ -419,7 +402,7 @@ if __name__ == "__main__":
         if (iter == epoch):
             break
 
-    test = False
+    test = True
     # Run model
     if (test is True):
         with torch.no_grad():
