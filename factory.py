@@ -71,3 +71,18 @@ def load_pretrained_vit_b_16():
     print('build model success!')
 
     return model
+
+
+def load_pretrained_swin_vit_b():
+    # print(timm.list_models())
+    backbone = timm.create_model('swin_base_patch4_window7_224_in22k',
+                                 pretrained=True)
+
+    projector = nn.Sequential(nn.Linear(21841, 2048), nn.BatchNorm1d(2048),
+                              nn.ReLU(inplace=True), nn.Dropout(p=0.5),
+                              nn.Linear(2048, 200))
+
+    model = nn.Sequential(backbone, projector)
+
+    print('build model success!')
+    return model

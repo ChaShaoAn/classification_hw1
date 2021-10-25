@@ -8,6 +8,7 @@ def update_lost_hist(train_list, val_list, name='compare', xlabel='Loss'):
     plt.ylabel(xlabel)
     plt.xlabel('Epoch')
     plt.legend(['train', 'val'], loc='center right')
+    plt.savefig('output/' + name + '_epoch' + str(len(train_list)) + '.jpg')
     plt.show()
 
 
